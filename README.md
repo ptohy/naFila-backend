@@ -1,2 +1,2 @@
-# nafila-backend
-API do projeto naFila (MVP PUC RIO).
+# naFila-backend
+API do projeto naFila (MVP Pós PUC-RIO)
