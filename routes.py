@@ -4,9 +4,7 @@ from flasgger import swag_from
 
 bp = Blueprint('api', __name__)
 
-# -------------------------
-# 🔍 Listar conteúdos
-# -------------------------
+# Listar conteúdos
 @bp.route('/listar', methods=['GET'])
 @swag_from({'tags': ['Conteúdos']})
 def listar():
@@ -15,9 +13,7 @@ def listar():
     return jsonify([c.to_dict() for c in conteudos])
 
 
-# -------------------------
-# ➕ Cadastrar conteúdo
-# -------------------------
+# Cadastrar conteúdo
 @bp.route('/cadastrar', methods=['POST'])
 @swag_from({'tags': ['Conteúdos']})
 def cadastrar():
@@ -38,10 +34,7 @@ def cadastrar():
 
     return jsonify({'mensagem': 'Conteúdo cadastrado com sucesso.'}), 201
 
-
-# -------------------------
-# ❌ Deletar conteúdo
-# -------------------------
+# Deletar conteúdo
 @bp.route('/deletar/<int:id>', methods=['DELETE'])
 @swag_from({'tags': ['Conteúdos']})
 def deletar(id):
@@ -52,10 +45,7 @@ def deletar(id):
 
     return jsonify({'mensagem': 'Conteúdo deletado com sucesso'})
 
-
-# -------------------------
-# 🔄 Atualizar status
-# -------------------------
+# Atualizar status
 @bp.route('/atualizar_status/<int:id>', methods=['PUT'])
 @swag_from({'tags': ['Conteúdos']})
 def atualizar_status(id):
@@ -67,10 +57,7 @@ def atualizar_status(id):
 
     return jsonify({'mensagem': 'Status atualizado com sucesso.'})
 
-
-# -------------------------
-# 🔃 Reordenar conteúdos
-# -------------------------
+# Reordenar conteúdos
 @bp.route('/reordenar', methods=['POST'])
 @swag_from({'tags': ['Conteúdos']})
 def reordenar():
@@ -89,10 +76,7 @@ def reordenar():
     db.session.commit()
     return jsonify({'mensagem': 'Ordem atualizada com sucesso.'})
 
-
-# -------------------------
-# 🔎 Pesquisar conteúdos
-# -------------------------
+# Pesquisar conteúdos
 @bp.route('/pesquisar', methods=['GET'])
 @swag_from({'tags': ['Conteúdos']})
 def pesquisar():
