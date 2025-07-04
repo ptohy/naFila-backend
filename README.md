@@ -62,7 +62,7 @@ python -m venv venv
 - No Windows:
 
 ```bash
-venv\Scriptsctivate
+venv\Scripts\activate
 ```
 
 - No macOS/Linux:
